@@ -1,0 +1,19 @@
+AllCops:
+  TargetRubyVersion: 2.4
+  Exclude:
+    - 'bin/**/*'
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'spec/**/*'
+
+Documentation:
+  Enabled: false
+
+Rails:
+  Enabled: true
+
+# Rubocop should be used for style guide adherence, not testing for code smell
+Rails/OutputSafety:
+  Enabled: false
+Rails/SkipsModelValidations:
+  Enabled: false
