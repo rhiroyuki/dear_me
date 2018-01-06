@@ -1,3 +1,5 @@
 class LandingPageController < ApplicationController
-  def index; end
+  def index
+    @email = Email.new
+  end
 end
