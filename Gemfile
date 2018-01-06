@@ -29,4 +29,8 @@ group :development do
   gem 'rubocop', '~> 0.52.1', require: false
 end
 
+group :test do
+  gem 'shoulda-matchers', '~> 3.1'
+end
+
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
