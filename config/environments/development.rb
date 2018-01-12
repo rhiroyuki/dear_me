@@ -2,6 +2,7 @@ Rails.application.configure do
   config.cache_classes = false
   config.eager_load = false
   config.consider_all_requests_local = true
+
   if Rails.root.join('tmp/caching-dev.txt').exist?
     config.action_controller.perform_caching = true
     config.cache_store = :memory_store
@@ -14,14 +15,7 @@ Rails.application.configure do
   end
 
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    :port           => ENV['MAILGUN_SMTP_PORT'],
-    :address        => ENV['MAILGUN_SMTP_SERVER'],
-    :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
-    :password       => ENV['MAILGUN_SMTP_PASSWORD'],
-    :domain         => 'dear-future-me.heroku.com',
-    :authentication => :plain,
-  }
+  config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
 
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.perform_caching = false
