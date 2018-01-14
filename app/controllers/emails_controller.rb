@@ -4,7 +4,7 @@ class EmailsController < ApplicationController
     @email = Email.new(email_params)
     if @email.save
       flash[:success] = 'Email created!'
-      return redirect_to root_url, status: :created
+      return render 'landing_page/index', status: :created
     end
     flash[:error] = @email.errors.full_messages
     redirect_to root_url
