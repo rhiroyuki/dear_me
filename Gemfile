@@ -29,6 +29,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'rubocop', '~> 0.52.1', require: false
+  gem 'foreman'
 end
 
 group :test do
