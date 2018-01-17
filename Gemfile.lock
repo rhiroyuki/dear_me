@@ -76,6 +76,7 @@ GEM
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
+    json (2.1.0)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -137,6 +138,8 @@ GEM
     rb-fsevent (0.10.2)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    recaptcha (4.6.3)
+      json
     redis (4.0.1)
     rspec-core (3.7.1)
       rspec-support (~> 3.7.0)
@@ -225,6 +228,7 @@ DEPENDENCIES
   pry-rails
   puma (~> 3.7)
   rails (~> 5.1.4)
+  recaptcha
   rspec-rails (~> 3.7)
   rubocop (~> 0.52.1)
   sass-rails (~> 5.0)

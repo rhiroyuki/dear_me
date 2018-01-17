@@ -10,9 +10,9 @@
   Simple as that!
 </h3>
 
-<%= form_for @email do |f| %>
+<%= form_for @email, url: emails_path, method: :post do |f| %>
   <%= f.text_field :to %>
   <%= f.text_area :body %>
   <%= f.date_select :send_date_at %>
-  <%= f.submit %>
+  <%= invisible_recaptcha_tags text: t('create', scope: 'helpers.submit', model: @email.model_name.human) %>
 <% end %>
