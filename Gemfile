@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 
 ruby '2.4.3'
@@ -7,30 +9,34 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails', '~> 5.1.4'
+gem 'jbuilder', '~> 2.5'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
+gem 'rails', '~> 5.1.4'
+gem 'recaptcha', require: 'recaptcha/rails'
 gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'jbuilder', '~> 2.5'
 gem 'sidekiq'
-gem "recaptcha", require: "recaptcha/rails"
-gem 'newrelic_rpm'
+gem 'uglifier', '>= 1.3.0'
+
+group :production do
+  gem 'airbrake-ruby', '~> 2.8'
+  gem 'newrelic_rpm'
+end
 
 group :development, :test do
+  gem 'dotenv-rails'
+  gem 'factory_bot_rails'
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.7'
-  gem 'factory_bot_rails'
-  gem 'dotenv-rails'
 end
 
 group :development do
-  gem 'web-console', '>= 3.3.0'
+  gem 'foreman'
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'rubocop', '~> 0.52.1', require: false
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'rubocop', '~> 0.52.1', require: false
-  gem 'foreman'
+  gem 'web-console', '>= 3.3.0'
 end
 
 group :test do
