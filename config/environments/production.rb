@@ -29,6 +29,7 @@ Rails.application.configure do
     :domain         => 'dear-future-me.herokuapp.com',
     :authentication => :plain,
   }
+  config.action_mailer.default_url_options = { host: "dearme.ml" }
 
   config.active_record.dump_schema_after_migration = false
 end

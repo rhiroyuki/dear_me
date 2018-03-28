@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 20180328012621) do
     t.datetime "updated_at", null: false
     t.datetime "confirmed_at"
     t.string "confirmation_token"
-    t.datetime "confirmation_sent_at"
     t.index ["confirmation_token"], name: "index_emails_on_confirmation_token", unique: true
   end
 
