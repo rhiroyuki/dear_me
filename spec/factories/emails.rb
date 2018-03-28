@@ -3,5 +3,6 @@ FactoryBot.define do
     to "mail@mail.com"
     body "myString"
     send_date_at "2018-01-06"
+    confirmed false
   end
 end

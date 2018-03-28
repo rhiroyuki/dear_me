@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Dear user,</h1>
+    <p>You wrote an email using our platform, in order to check if you actually sent the email to yourself we need to confirm it.</p>
+    <p>If it wasn't you that did it, please ignore this message.</p>
+    <%= link_to 'Confirm email', email_confirmation_url(@token) %>
+  </body>
+</html>
