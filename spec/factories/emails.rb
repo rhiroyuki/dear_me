@@ -3,6 +3,9 @@ FactoryBot.define do
     to "mail@mail.com"
     body "myString"
     send_date_at "2018-01-06"
-    confirmed false
+
+    trait :confirmed do
+      confirmed_at Time.current
+    end
   end
 end
