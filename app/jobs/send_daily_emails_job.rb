@@ -3,7 +3,7 @@ class SendDailyEmailsJob < ApplicationJob
 
   def perform
     Email.today_emails.each do |email|
-      DearMeMailer.dear_future_me(email).deliver_now
+      DearMeMailer.dear_future_me(email).deliver_later
     end
   end
 end
