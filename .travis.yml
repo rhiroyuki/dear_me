@@ -7,12 +7,14 @@ sudo: false
 install:
   - bundle install --jobs 4 --retry 4
 before_script:
-  - mv .env.sample .env
-  - bundle exec rake db:create db:migrate db:seed
+  - cp .env.sample .env
+  - bundle exec rake db:create db:migrate
 script:
   - bundle exec rspec spec
 deploy:
   provider: heroku
-  api_key:
-    secure: QqXNRZ1dodOSMfTkhzUMiwUKCAFbKGFq1VLj/XjNhVB1xwJ/YXN8NAgedu4+0AZgxgRoBydYKgRPKtshnhHMu5vu3UL/jzq0KCXHttw73GWmo8QfJgPoiEl4xV4msHcuOjetDz/x6oUyoluHptLsMtFUwSdqcrsQaiyOZSLReizKtpdnSfA+Qfoe3PT7Jipco2FajuuaYzgSONxZZw8TNfDrrIFMasQI0bdkTWR6Dq7deuSVvx2rurNKSMB7LdXfjFrv757ZWPyGw9yoqtDgxizq7UrA129urIy+VSOoGYzvTuqwoGoXh3RjI84sx3PIZnGa5GEGO1iPSuzbuAbuHc6BjuyzoXaSMkoPKtMiFvMw9xMhxhjv+rBDUcpbHVaWniPIdObyX1CauYI3FG2Hhe8cBiF5WCkTn9SDKKqDqZCKHTwOb6jE4M2pI3Qdr0LjYA+28upFrlGV5rNNGbeNGGcCyoQgoGskAm/wIV2RLzs+BQPRcEhkPhi4IWXHFk8qP2a3Lgz4wBS8iohnmJ8WMzcSSH0VkIvjUmTzGJELgFS/r3AOAYx9N+VOheD2LlvSgVPa6pkAqbGbiYk/C73YwlZA/eKOwmUYkhJHshRNkBn0dsRGdbxGLmZO6WjeD+r6t9z0p2FwsD/CFa/dSA1P6g8olEUZm/uKkculVrqndKA=
   app: dear-future-me
+  api_key: $HEROKU_API_KEY
+  skip_cleanup: true
+  run:
+    - bundle exec rake db:migrate
