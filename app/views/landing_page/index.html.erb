@@ -13,6 +13,6 @@
 <%= form_for @email, url: emails_path, method: :post do |f| %>
   <%= f.text_field :to %>
   <%= f.text_area :body %>
-  <%= f.date_select :send_date_at %>
+  <%= f.date_select :send_date_on %>
   <%= invisible_recaptcha_tags text: t('create', scope: 'helpers.submit', model: @email.model_name.human) %>
 <% end %>

@@ -65,7 +65,7 @@ describe EmailsController, type: :controller do
           email: {
             to: email.to,
             body: email.body,
-            send_date_at: email.send_date_at
+            send_date_on: email.send_date_on
           }
         }
       end
@@ -83,7 +83,7 @@ describe EmailsController, type: :controller do
           email: {
             to: '',
             body: email.body,
-            send_date_at: email.send_date_at
+            send_date_on: email.send_date_on
           }
         }
       end

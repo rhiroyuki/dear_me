@@ -21,6 +21,6 @@ class EmailsController < ApplicationController
   private
 
   def email_params
-    params.require(:email).permit(:to, :body, :send_date_at)
+    params.require(:email).permit(:to, :body, :send_date_on)
   end
 end

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe SendDailyEmailsJob, type: :job do
-  let!(:email) { create(:email, send_date_at: Time.current) }
+  let!(:email) { create(:email, send_date_on: Time.current) }
 
   before do
     allow(DearMeMailer).to receive(:dear_future_me).and_call_original
