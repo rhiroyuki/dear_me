@@ -3,7 +3,7 @@ class EmailsController < ApplicationController
     @email = Email.new(email_params)
 
     if verify_recaptcha(model: @email) && @email.save
-      DearMeMailer.send_email_token_confirmation(@email).deliver_later
+      DearMeMailer.token_confirmation(@email).deliver_later
       return redirect_to root_path
     end
 

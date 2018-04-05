@@ -19,8 +19,8 @@ describe DearMeMailer, type: :mailer do
     end
   end
 
-  describe '.send_email_token_confirmation' do
-    subject { described_class.send_email_token_confirmation(email).deliver_now }
+  describe '.token_confirmation' do
+    subject { described_class.token_confirmation(email).deliver_now }
 
     it 'renders the subject' do
       expect(subject.subject).to eq('Confirm the email you will receive from DearMe')

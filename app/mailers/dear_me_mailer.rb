@@ -7,7 +7,7 @@ class DearMeMailer < ApplicationMailer
          subject: 'Dear me in the future :)')
   end
 
-  def send_email_token_confirmation(email)
+  def token_confirmation(email)
     @token = email.confirmation_token
 
     mail(to: email.to,
