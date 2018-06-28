@@ -4,9 +4,10 @@ class EmailsController < ApplicationController
 
     if verify_recaptcha(model: @email) && @email.save
       DearMeMailer.token_confirmation(@email).deliver_later
-      return redirect_to root_path
+      return redirect_to root_path, notice: 'Email verification sent!'
     end
 
+    flash[:alert] = 'The email could not be sent.'
     render 'landing_page/index', status: :unprocessable_entity
   end
 
