@@ -17,6 +17,7 @@ gem 'recaptcha', require: 'recaptcha/rails'
 gem 'sass-rails', '~> 5.0'
 gem 'sidekiq'
 gem 'uglifier', '>= 1.3.0'
+gem 'valid_email2'
 
 group :production do
   gem 'airbrake-ruby', '~> 2.8'
