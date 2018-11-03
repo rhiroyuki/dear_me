@@ -1,18 +1,19 @@
-<h1>
-  Dear future me.
-</h1>
+<section>
+  <h2>
+    Dear future me.
+  </h2>
 
-<h2>
-  Write an e-mail to yourself, set the date you want to receive it and send it!
-</h2>
+  <p>
+    Write an e-mail to yourself, set the date you want to receive it and send it! Simple as that!
+  </p>
 
-<h3>
-  Simple as that!
-</h3>
+  <%= form_for @email, url: emails_path, method: :post do |f| %>
+    <%= f.text_field :to, placeholder: :to %>
+    <%= f.text_area :body, placeholder: :body %>
+    <%= f.label :send_date_on %>
+    <%= f.date_select :send_date_on, end_year: Time.current.year + 50 %>
+    <%= invisible_recaptcha_tags text: t('create', scope: 'helpers.submit', model: @email.model_name.human) %>
+  <% end %>
 
-<%= form_for @email, url: emails_path, method: :post do |f| %>
-  <%= f.text_field :to %>
-  <%= f.text_area :body %>
-  <%= f.date_select :send_date_on %>
-  <%= invisible_recaptcha_tags text: t('create', scope: 'helpers.submit', model: @email.model_name.human) %>
-<% end %>
+  <p class="italic">PS: We will send a confirmation e-mail beforehand in order to avoid spam.</p>
+</section>
