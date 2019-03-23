@@ -9,6 +9,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'airbrake'
 gem 'jbuilder', '~> 2.5'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
@@ -20,7 +21,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'valid_email2'
 
 group :production do
-  gem 'airbrake-ruby', '~> 2.8'
   gem 'newrelic_rpm'
 end
 
